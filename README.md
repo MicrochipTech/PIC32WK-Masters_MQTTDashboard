@@ -20,8 +20,8 @@ The preferred and tested server setup uses a Digitalocean Ubuntu 16.04 instance 
 apt-get update
 apt-get upgrade -y
 apt-get install git docker.io -y
-git clone https://github.com/vppillai/masters-Docker.git
-cd masters-Docker
+git clone https://github.com/MicrochipTech/PIC32WK-Masters_MQTTDashboard.git
+cd Server/masters-Docker
 docker build -t myiotdashboard .
 docker run -d -p 80:80 -p 443:443  --name iot_dashboard myiotdashboard
 ```
