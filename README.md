@@ -59,3 +59,4 @@ To execute the demo after configuration, load the dashboard onto a browser by en
 - Bidirectional LED control from dashboard and starter kit (SK) using web page buttons and SK switches (SW1 and SW3)
 - Temperature sensor readings will be updated in the dashboard
 - When a USB flash drive (masss storage device) is plugged into the OTG port of the starter kit, its configured name as well as serial number will be displayed on the dashboard.
+- The Android App available in the APP folder can be used to discover the boards within the same WiFi network and have the same level of control over the device as from the Dashboard. 
