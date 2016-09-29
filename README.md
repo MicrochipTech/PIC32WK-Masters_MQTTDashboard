@@ -59,4 +59,18 @@ To execute the demo after configuration, load the dashboard onto a browser by en
 - Bidirectional LED control from dashboard and starter kit (SK) using web page buttons and SK switches (SW1 and SW3)
 - Temperature sensor readings will be updated in the dashboard
 - When a USB flash drive (masss storage device) is plugged into the OTG port of the starter kit, its configured name as well as serial number will be displayed on the dashboard.
-- The Android App available in the APP folder can be used to discover the boards within the same WiFi network and have the same level of control over the device as from the Dashboard. 
+- The Android App available in the APP folder can be used to discover the boards within the same WiFi network and have the same level of control over the device as from the Dashboard.
+
+## Application commands
+
+```
+- app_constat          :          fetch connection status of device
+- app_erase_cfg        :          erase configutrations stored in flash
+- app_set_server       :          set server IP address
+- app_set_port         :          set server port. Default is assumed as 80
+- app_set_id           :          set thingID. Default is derived from Mac address
+- app_set_mode         :          set device in master or slave mode
+- app_save_cfg         :          save configurations to flash and restart to apply them
+- app_read_cfg         :          display current configuration set (from struct , no tFlash)
+- app_read_per         :          display peripheral data
+```
