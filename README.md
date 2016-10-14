@@ -28,6 +28,44 @@ docker run -d -p 80:80 -p 443:443  --name iot_dashboard myiotdashboard
 
 Once this is done, onte down the public IP address of the server. This is to be configured into the device.
 
+#### server without Docker
+
+To setup a server instance without Docker, run the following commands. You would ahve to run as a previlaged user to install and configure the tools.
+
+```bash
+#install tools
+apt-get update && apt-get install -y apache2 mosquitto-clients mosquitto build-essential git 
+
+#clone repo
+git clone https://github.com/MicrochipTech/PIC32WK-Masters_MQTTDashboard.git
+cd Server/masters-Docker
+
+#compile and install APIs
+mkdir -p /var/www/api/listen
+cp configs/listen.sh /var/www/api/listen/to
+chmod +x /var/www/api/listen/to
+
+mkdir -p /var/www/api/mdtweet
+cp configs/sendMessage.c /var/www/api/mdtweet
+gcc /var/www/api/mdtweet/sendMessage.c -o /var/www/api/mdtweet/for
+rm /var/www/api/mdtweet/sendMessage.c
+
+#configure Apache
+cp configs/serve-cgi-bin.conf /etc/apache2/conf-available/serve-cgi-bin.conf
+cp configs/serve-cgi-bin.conf /etc/apache2/conf-enabled/serve-cgi-bin.conf
+cp configs/apache2.conf /etc/apache2/apache2.conf
+mkdir -p /var/www/html
+rm -rf /var/www/html/*
+cp html /var/www/html 
+a2enmod cgi
+service apache2 restart
+
+#configure Mosquitto
+cp configs/mosquitto.conf /etc/mosquitto/mosquitto.conf
+cp configs/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+service mosquitto restart
+```
+
 ### Device
 
 Once the device is flashed with bootstrap and firmware code, issue the following commands into the console prompt. [console operates at 9200 8N1 baud settings]
