@@ -28,7 +28,7 @@ docker run -d -p 80:80 -p 443:443  --name iot_dashboard myiotdashboard
 
 Once this is done, onte down the public IP address of the server. This is to be configured into the device.
 
-#### server without Docker
+#### Server without Docker
 
 To setup a server instance without Docker, run the following commands. You would ahve to run as a previlaged user to install and configure the tools.
 
