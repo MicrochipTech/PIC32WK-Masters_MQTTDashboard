@@ -89,6 +89,8 @@ app_save_cfg
 
 Once the device resets, the "Thing-ID" will be displayed in the bootup logs. Make a note of this Thing-ID.
 
+When the device is not connected to the server the Red LED will be lit up on the starter kit. Once connection is successfully established, the red LED will be switched off. 
+
 ## Operation
 
 To execute the demo after configuration, load the dashboard onto a browser by enteringt the public IP address of the server. Once the device is up and running with a valid WLAN connection (with WAN connectivity) and server configuration, the following operations can be performed:
