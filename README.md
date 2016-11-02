@@ -38,7 +38,7 @@ apt-get update && apt-get install -y apache2 mosquitto-clients mosquitto build-e
 
 #clone repo
 git clone https://github.com/MicrochipTech/PIC32WK-Masters_MQTTDashboard.git
-cd Server/masters-Docker
+cd PIC32WK-Masters_MQTTDashboard/Server 
 
 #compile and install APIs
 mkdir -p /var/www/api/listen
@@ -56,13 +56,12 @@ cp configs/serve-cgi-bin.conf /etc/apache2/conf-enabled/serve-cgi-bin.conf
 cp configs/apache2.conf /etc/apache2/apache2.conf
 mkdir -p /var/www/html
 rm -rf /var/www/html/*
-cp html /var/www/html 
-a2enmod cgi
+cp html/* /var/www/html -rf 
+a2enmod cgi 
 service apache2 restart
 
 #configure Mosquitto
 cp configs/mosquitto.conf /etc/mosquitto/mosquitto.conf
-cp configs/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 service mosquitto restart
 ```
 
