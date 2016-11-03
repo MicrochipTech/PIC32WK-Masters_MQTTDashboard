@@ -86,7 +86,7 @@ app_set_server <public ip of server>
 app_save_cfg
 ```
 
-Once the device resets, the "Thing-ID" will be displayed in the bootup logs. Make a note of this Thing-ID.
+Once the device resets, the `Thing-ID` will be displayed in the bootup logs. Make a note of this `Thing-ID` and enter it into the text box in the dasbboard to pair it.
 
 When the device is not connected to the server the Red LED will be lit up on the starter kit. Once connection is successfully established, the red LED will be switched off. 
 
